@@ -1,0 +1,801 @@
+{
+  "fingerprint": "fb5fe58db5f9d8bd45f04ad698ad30f90202c275c2c961d3acebdf1c6e88d2e3",
+  "protocol": {
+    "version": "posthoc-supplement-v1",
+    "registered_at_utc": "2026-11-03T05:26:16.873113+00:00",
+    "timing": "Post-hoc supplementary research after the original formal experiment; never replaces primary results.",
+    "supplemental_source_sha256": "7461bc155c22c137b375ed14d0f1f15b6279010f0c20b7a66de15738a446add9",
+    "frozen_runner_sha256": "4c763ac4808f06d54f4d63b9f1ef367fa4eb2f581541ebc9aa2f708ca80aef2c",
+    "original_formal_fingerprint": "192d015e9584242419219ad21a44b90df7a96e259687dc346a8002c031d84930",
+    "original_formal_files_sha256": {
+      "manifest.json": "62f4019ca8a2586586983ea762798edeb88195a717db696fdaa7ee8974d4ac32",
+      "ledger.jsonl": "7e7dfb205ee3746d8708f7edf013886ef93ee0b8f3e8d0ac357d840a7442720d",
+      "results.jsonl": "88e4c30b02f78696922ddb1fb4b53e7cbf119cc63976e0b29ae7d86dfe05f10f",
+      "source_data.json": "e685d820983df7f72bb74fc63a2c3da9d156c0668eacd31efc98e6d2e0ec9702"
+    },
+    "original_development_source_sha256": "87afcce83e49ce549fc12b88bfdcb6f5fe15fae93ef9410de7cce75324a3c22f",
+    "synthetic_items_file_sha256": "96e12e9957e0c43646c4e886c691039016c949693f200984be2805ad2dc0626b",
+    "synthetic_items": {
+      "purpose": "Post-hoc protocol robustness study; independently hand-constructed closed-world questions, not pharmacist-knowledge evaluation.",
+      "provenance": "全部事实、规则和数值在题干中给定。未从正式100题、其解析、原few-shot示例或原3道开发题抽取。",
+      "split_policy": "D01-D08为设计/开发检查，P01-P08为held-out probe。两组及固定v2在任何新增API调用前冻结；不得根据probe结果修改v2。",
+      "items": [
+        {
+          "id": "D01",
+          "split": "design_dev",
+          "question_type": "最佳选择题",
+          "question": "本练习的库存规则：最终库存严格少于30盒时才标记“需补货”。起初有18盒，随后入库20盒、出库7盒，没有其他变化。下列结论哪项正确？",
+          "option": {
+            "A": "最终25盒，需补货",
+            "B": "最终31盒，需补货",
+            "C": "最终31盒，不需补货",
+            "D": "最终38盒，不需补货"
+          },
+          "answer": "C",
+          "analysis": "18+20-7=31；31不小于30，因此不需补货。"
+        },
+        {
+          "id": "D02",
+          "split": "design_dev",
+          "question_type": "最佳选择题",
+          "question": "已知1小时=60分钟、1分钟=60秒。一次盘点用时2小时15分钟。以下哪项表示的时长不等于本次盘点用时？",
+          "option": {
+            "A": "135分钟",
+            "B": "2.25小时",
+            "C": "8100秒",
+            "D": "125分钟"
+          },
+          "answer": "D",
+          "analysis": "2×60+15=135分钟=2.25小时=8100秒；125分钟不等价。"
+        },
+        {
+          "id": "D03",
+          "split": "design_dev",
+          "question_type": "多项选择题",
+          "question": "虚构的样品出库规则：当前日数不超过截止日，并且开封后的经过日数不超过2，才可出库；开封当天经过日数为0。当前是第30日。下列哪些样品同时符合两条规则？",
+          "option": {
+            "A": "截止第30日，第28日开封",
+            "B": "截止第29日，第30日开封",
+            "C": "截止第31日，第27日开封",
+            "D": "截止第32日，第29日开封",
+            "E": "截止第30日，第30日开封"
+          },
+          "answer": "ADE",
+          "analysis": "A经过2日且未过截止日，D经过1日，E经过0日；B已过截止日，C经过3日。"
+        },
+        {
+          "id": "D04",
+          "split": "design_dev",
+          "question_type": "配伍选择题",
+          "question": "仅按以下给定规则选择批次：排除库存为0者，余者优先选择截止日最早的批次；截止日相同时按甲、乙、丙、丁的顺序优先。甲：截止第15日、库存8；乙：截止第12日、库存0；丙：截止第15日、库存4；丁：截止第18日、库存9。应选哪批？",
+          "option": {
+            "A": "甲",
+            "B": "乙",
+            "C": "丙",
+            "D": "丁"
+          },
+          "answer": "A",
+          "analysis": "乙无库存先排除；甲和丙截止日同为15，按给定顺序选甲。"
+        },
+        {
+          "id": "D05",
+          "split": "design_dev",
+          "question_type": "最佳选择题",
+          "question": "本题包装规则为每箱8盒、每盒12袋。仓库现有2整箱、额外5整盒和额外7散袋，三者互不重叠。一共多少袋？",
+          "option": {
+            "A": "199袋",
+            "B": "252袋",
+            "C": "259袋",
+            "D": "267袋"
+          },
+          "answer": "C",
+          "analysis": "2×8×12+5×12+7=192+60+7=259。"
+        },
+        {
+          "id": "D06",
+          "split": "design_dev",
+          "question_type": "多项选择题",
+          "question": "本练习规定入选记录必须同时满足：数量至少10，读数位于2至8之间（包括2和8），包装标记为“完整”。下列哪些记录入选？",
+          "option": {
+            "A": "数量10，读数2，完整",
+            "B": "数量9，读数4，完整",
+            "C": "数量15，读数8，完整",
+            "D": "数量18，读数5，破损",
+            "E": "数量11，读数9，完整"
+          },
+          "answer": "AC",
+          "analysis": "A、C同时满足三个条件；B数量不足、D包装不完整、E读数越界。"
+        },
+        {
+          "id": "D07",
+          "split": "design_dev",
+          "question_type": "最佳选择题",
+          "question": "记账规则：先把每笔记录计入的数量限制为不超过50，再把各笔计入数量相加。实际两笔数量分别为65和30。以下说法哪项错误？",
+          "option": {
+            "A": "合计计入80",
+            "B": "第一笔计入50",
+            "C": "第二笔计入30",
+            "D": "合计计入95"
+          },
+          "answer": "D",
+          "analysis": "逐笔限制后为50和30，合计80；95忽略了第一笔上限。"
+        },
+        {
+          "id": "D08",
+          "split": "design_dev",
+          "question_type": "多项选择题",
+          "question": "本题定义“记录合格率”=合格记录笔数/全部记录笔数，与各笔数量无关。共有4笔：合格10件、合格20件、合格30件、不合格40件。下列说法哪些正确？",
+          "option": {
+            "A": "记录合格率为75%",
+            "B": "合格记录合计60件",
+            "C": "所有记录合计100件",
+            "D": "记录合格率为60%",
+            "E": "全部记录共3笔"
+          },
+          "answer": "ABC",
+          "analysis": "合格3/总4=75%；合格数量10+20+30=60，全部数量100。"
+        },
+        {
+          "id": "P01",
+          "split": "held_out_probe",
+          "question_type": "最佳选择题",
+          "question": "本题规定：可分配数量=max(0,现存数量-预留数量)，本订单分配量不得超过可分配数量或订单需求。现存84件，预留19件，新订单需求68件。最多可给本订单分配多少件？",
+          "option": {
+            "A": "68件",
+            "B": "65件",
+            "C": "84件",
+            "D": "49件"
+          },
+          "answer": "B",
+          "analysis": "可分配84-19=65；min(65,68)=65。"
+        },
+        {
+          "id": "P02",
+          "split": "held_out_probe",
+          "question_type": "多项选择题",
+          "question": "已知1升=1000毫升、1毫升=1000微升。容器中的体积是0.075升。以下哪些表示与该体积相等？",
+          "option": {
+            "A": "75毫升",
+            "B": "7500微升",
+            "C": "75000微升",
+            "D": "0.75毫升",
+            "E": "750毫升"
+          },
+          "answer": "AC",
+          "analysis": "0.075×1000=75毫升，再乘1000为75000微升。"
+        },
+        {
+          "id": "P03",
+          "split": "held_out_probe",
+          "question_type": "最佳选择题",
+          "question": "本题明确规定损耗率=损耗件数/原始总件数。原始共有200件，其中6件损耗，其余全部保留。下列说法哪项不符合给定规则或数据？",
+          "option": {
+            "A": "损耗率为3%",
+            "B": "保留194件",
+            "C": "计算损耗率的分母为200",
+            "D": "损耗率应计算为6/194"
+          },
+          "answer": "D",
+          "analysis": "6/200=3%，200-6=194；以保留件数194作分母违反给定定义。"
+        },
+        {
+          "id": "P04",
+          "split": "held_out_probe",
+          "question_type": "配伍选择题",
+          "question": "编码规则按先后顺序执行：若标签缺失，编码为红；否则，若重量偏差严格大于2，编码为黄；其余编码为蓝。一件样品标签完整，重量偏差恰好为2。对应什么编码？",
+          "option": {
+            "A": "红",
+            "B": "黄",
+            "C": "蓝",
+            "D": "无法根据规则确定"
+          },
+          "answer": "C",
+          "analysis": "标签不缺失；偏差2不严格大于2，因此进入其余情况，编码蓝。"
+        },
+        {
+          "id": "P05",
+          "split": "held_out_probe",
+          "question_type": "多项选择题",
+          "question": "日志规则：同一编号多次出现时仅保留最后一次的数量变化，再求净变化。按顺序收到X:+5、Y:-2、X:+7、Z:+3。以下哪些说法正确？",
+          "option": {
+            "A": "X应保留+5",
+            "B": "X应保留+7",
+            "C": "最终净变化为+8",
+            "D": "去重后有3条记录",
+            "E": "最终净变化为+13"
+          },
+          "answer": "BCD",
+          "analysis": "保留X:+7、Y:-2、Z:+3，共3条，净变化7-2+3=8。"
+        },
+        {
+          "id": "P06",
+          "split": "held_out_probe",
+          "question_type": "最佳选择题",
+          "question": "一个运输箱最多装7盒，盒子不能拆分，也不允许超过每箱上限。现在必须装完31盒，箱子数量不限。最少需要多少箱？",
+          "option": {
+            "A": "5箱",
+            "B": "4箱",
+            "C": "6箱",
+            "D": "7箱"
+          },
+          "answer": "A",
+          "analysis": "4箱最多28盒不足，5箱最多35盒足够，所以最少5箱。"
+        },
+        {
+          "id": "P07",
+          "split": "held_out_probe",
+          "question_type": "多项选择题",
+          "question": "本题分配规则：允许部分满足订单，按高、中、低优先级依次分配，每级先尽量满足需求，再把剩余数量给下一级；总分配不能超过现有20件。高、中、低需求依次为12、11、4件。下列哪些结论正确？",
+          "option": {
+            "A": "高优先级分到12件",
+            "B": "中优先级分到11件",
+            "C": "低优先级分到0件",
+            "D": "分配完成后剩余0件",
+            "E": "实际共分配27件"
+          },
+          "answer": "ACD",
+          "analysis": "高先取12，剩8给中，低无剩余；总分配20，余额0。"
+        },
+        {
+          "id": "P08",
+          "split": "held_out_probe",
+          "question_type": "最佳选择题",
+          "question": "虚构的分段采购计价规则：前10盒每盒9元，超过10盒的部分每盒7元；没有其他费用或折扣。购买14盒应支付多少元？",
+          "option": {
+            "A": "126元",
+            "B": "118元",
+            "C": "98元",
+            "D": "100元"
+          },
+          "answer": "B",
+          "analysis": "前10盒90元，额外4盒28元，合计118元。"
+        }
+      ]
+    },
+    "source_cases_sha256": "6620fe48dc7de9ff3ad64619fb66d81e99aa1ce10bb203fad2254ce9afac14b6",
+    "original_invalid_initials": [
+      {
+        "index": 13,
+        "row_number": 14,
+        "initial_call_id": "5eb7c685c3e0460f903e2d43a47af85d",
+        "reason": "invalid_original_initial_schema"
+      },
+      {
+        "index": 66,
+        "row_number": 67,
+        "initial_call_id": "6cbec81f878d4827941bd744226d17e6",
+        "reason": "invalid_original_initial_schema"
+      }
+    ],
+    "model_settings": {
+      "model": "deepseek-flash",
+      "temperature": 0,
+      "max_tokens": 768,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "max_api_calls": 240,
+    "condition_order_seed": 605202,
+    "planned_call_counts": {
+      "protocol_comparison": 32,
+      "one_step_feedback_ablation": 190,
+      "total": 222
+    },
+    "study_A": {
+      "name": "Closed-world protocol robustness check",
+      "conditions": [
+        "cot_v1",
+        "cot_v2"
+      ],
+      "design_dev_ids": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08"
+      ],
+      "held_out_probe_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "frozen_prompts": {
+        "cot_v1": "你正在完成执业药师考试选择题。只依据给出的题干、选项和你已有的知识作答。识别题型：多项选择题选择全部正确选项，其余题型只选择一个选项。留意“不包括”“错误”“不正确”等否定表达、限定条件、单位及题干背景。不得编造缺失图表内容，不得选择未提供或空白的选项。只输出 json 对象；答案必须用字母列表，例如 {\"answer\":[\"A\"]} 或 {\"answer\":[\"A\",\"C\"]}。先辨认考点和关键条件，检查否定词与各选项是否满足条件，再给出答案。在 json 的 brief_reason 字段中提供简短的可核查判断依据，不超过120字。",
+        "cot_v2": "你正在完成执业药师考试选择题。只依据给出的题干、选项和你已有的知识作答。识别题型：多项选择题选择全部正确选项，其余题型只选择一个选项。留意“不包括”“错误”“不正确”等否定表达、限定条件、单位及题干背景。不得编造缺失图表内容，不得选择未提供或空白的选项。只输出 json 对象；答案必须用字母列表，例如 {\"answer\":[\"A\"]} 或 {\"answer\":[\"A\",\"C\"]}。先辨认考点和关键条件，检查否定词与各选项是否满足条件，再给出答案。在 json 的 brief_reason 字段中提供简短的可核查判断依据，不超过120字。\n输出前执行协议核对：（1）确认题目问的是正确项还是错误/不符合项，按题干明确给出的定义和规则作答；（2）逐项核算，单选只保留一个字母，多选保留全部符合项，禁止重复和空选项；（3）核对简短依据与最终字母完全一致，若不一致，先修正再输出；（4）只输出一个合法json对象，不使用Markdown代码块或前后说明。使用格式{\"brief_reason\":\"不超过120字的可核查依据\",\"answer\":[\"A\"]}。answer必须是大写选项字母组成的非空列表，而不是字符串；不能输出未定义的选项。"
+      },
+      "design_rationale": "v2 adds a fixed output/negation/answer-rationale alignment checklist motivated by already-observed main-study protocol failures.",
+      "order": "design_dev first, then held_out_probe; each item's two conditions are shuffled with one fixed seeded PRNG before any request.",
+      "condition_order_by_unit": {
+        "D01": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "D02": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "D03": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "D04": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "D05": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "D06": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "D07": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "D08": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "P01": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "P02": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "P03": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "P04": [
+          "cot_v2",
+          "cot_v1"
+        ],
+        "P05": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "P06": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "P07": [
+          "cot_v1",
+          "cot_v2"
+        ],
+        "P08": [
+          "cot_v1",
+          "cot_v2"
+        ]
+      },
+      "no_adaptation": "Both splits and v2 are frozen before any supplementary API request. No retuning after design or probe responses.",
+      "interpretation": "Independent hand-constructed protocol checks; shared arithmetic/unit themes do not establish pharmacy-domain generalization."
+    },
+    "study_B": {
+      "name": "Controlled one-step feedback ablation",
+      "conditions": [
+        "feedback",
+        "null_feedback"
+      ],
+      "overall_n": 97,
+      "conditional_n": 95,
+      "controller_prompt": "你正在完成执业药师考试选择题。只依据给出的题干、选项和你已有的知识作答。识别题型：多项选择题选择全部正确选项，其余题型只选择一个选项。留意“不包括”“错误”“不正确”等否定表达、限定条件、单位及题干背景。不得编造缺失图表内容，不得选择未提供或空白的选项。只输出 json 对象；答案必须用字母列表，例如 {\"answer\":[\"A\"]} 或 {\"answer\":[\"A\",\"C\"]}。你会收到候选答案及独立审查反馈。反馈也可能有错，请根据题意判断是否采纳。自主决定下一步：finish 表示保留当前答案并提交；revise 表示给出修订后的答案和依据。仅在需要修改或进一步核查时选择 revise，不要机械重复复核。只输出 json：{\"action\":\"finish或revise\",\"answer\":[\"A\"],\"brief_reason\":\"判断依据\",\"decision_reason\":\"为何提交或修改\"}。选择 finish 时 answer 必须与候选答案一致；达到轮数上限后将提交本轮答案。",
+      "manipulation": "Only the user JSON feedback field changes: original frozen first-critic feedback versus JSON null.",
+      "constants": "Same original legal initial candidate, question, controller prompt, review_round=1, remaining_review_rounds=0, model and settings. Both conditions explicitly have no remaining review round.",
+      "order": "Each original item's two conditions are shuffled using the same fixed PRNG stream after study A, and explicit orders are frozen below.",
+      "condition_order_by_unit": {
+        "q001": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q002": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q003": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q004": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q005": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q006": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q007": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q008": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q009": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q010": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q011": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q012": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q013": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q015": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q016": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q017": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q018": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q019": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q020": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q022": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q023": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q024": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q025": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q027": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q028": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q029": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q030": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q031": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q032": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q033": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q034": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q035": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q036": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q037": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q038": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q039": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q040": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q041": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q042": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q043": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q044": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q045": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q046": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q047": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q048": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q049": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q050": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q051": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q052": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q053": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q054": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q055": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q056": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q057": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q058": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q059": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q060": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q061": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q062": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q063": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q064": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q065": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q068": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q069": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q070": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q071": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q072": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q073": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q074": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q075": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q076": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q077": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q078": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q079": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q080": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q081": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q082": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q083": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q084": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q085": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q086": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q087": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q088": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q089": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q090": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q091": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q092": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q093": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q094": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q095": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q096": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q097": [
+          "feedback",
+          "null_feedback"
+        ],
+        "q098": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q099": [
+          "null_feedback",
+          "feedback"
+        ],
+        "q100": [
+          "feedback",
+          "null_feedback"
+        ]
+      },
+      "stopping": "Exactly one new controller call per condition. No fresh critic, second review, or iterative continuation.",
+      "inclusion": "Eligibility uses only original initial-answer schema validity, never correctness. The two invalid initials are shared failures in both overall denominators.",
+      "interpretation": "This isolates one controller-stage feedback intervention conditional on fixed original states; it is not a full-agent causal ablation or an independent replication."
+    },
+    "supplementary_primary_comparisons": {
+      "family": [
+        "A: cot_v2 versus cot_v1 on all 16 constructed checks",
+        "B: feedback versus null_feedback on the 95 schema-valid fixed initial states"
+      ],
+      "test": "Two-sided exact McNemar tests; Holm correction across exactly these two post-hoc supplementary comparisons.",
+      "descriptive_subsets": "Study A design_dev and held_out_probe each have 8 items; B overall97 includes two shared initial failures. These overlapping subsets are descriptive, not additional primary tests.",
+      "timing": "Frozen before supplementary requests but after main-study results; distinct from the original main-study multiplicity family."
+    },
+    "scoring": "Use original strict JSON/answer and controller action rules in both conditions. Valid incorrect, API failure and parse failure count wrong. Every job is attempted at most once; no retries of failures or incorrect answers.",
+    "cost_policy": "Budget counts every started request including unknown/failed attempts. SDK retries disabled. Unknown token use remains unknown. No prices are guessed."
+  }
+}

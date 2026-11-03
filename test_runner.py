@@ -68,7 +68,7 @@ class RunnerTests(unittest.TestCase):
         return ExperimentRunner(data or [item()], client or FakeClient(), self.directory, config)
 
     def test_real_dataset_audit_and_strict_parser(self):
-        path = Path(__file__).resolve().parents[1] / "tmp/assignment2_translation/course_task1.json"
+        path = Path(__file__).resolve().parents[1] / "data/1.exam.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         run = self.make_runner(data=data, cap=0, methods=("zero_shot", "few_shot", "cot", "agent"))
         self.assertEqual(len(run.valid_indices), 97)

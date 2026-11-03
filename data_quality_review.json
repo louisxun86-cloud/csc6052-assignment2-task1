@@ -1,7 +1,7 @@
 {
   "review_date_user_timezone": "2026-11-03",
   "timezone": "Asia/Shanghai",
-  "source_file": "C:\\Users\\HUAWEI\\Desktop\\港中深科研\\nlp\\tmp\\assignment2_translation\\course_task1.json",
+  "source_file": "LOCAL_PATH_OMITTED",
   "source_sha256": "ac196322dd8a9e4b37ab371087d7feb640b54c80af80c42ea807934b84211c57",
   "scope": "对全部100条的题干、选项、题型和来源进行离线输入完整性审查；不校验医学/法规事实或标准答案，不联网，不调用模型API，不改原数据。",
   "method": {

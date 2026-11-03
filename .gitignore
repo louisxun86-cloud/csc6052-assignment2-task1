@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.test_tmp/
+.env
+.env.*
+*.key
+*.pem
+*.aux
+*.log
+*.out
+*.xdv
+build_check/
+public_release/

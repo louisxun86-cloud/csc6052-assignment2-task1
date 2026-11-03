@@ -1,0 +1,4 @@
+openai==2.54.0
+matplotlib==3.10.0
+numpy==2.4.6
+scipy==1.16.3
