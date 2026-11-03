@@ -1,0 +1,542 @@
+{
+  "review_date_user_timezone": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "source_file": "C:\\Users\\HUAWEI\\Desktop\\港中深科研\\nlp\\tmp\\assignment2_translation\\course_task1.json",
+  "source_sha256": "ac196322dd8a9e4b37ab371087d7feb640b54c80af80c42ea807934b84211c57",
+  "scope": "对全部100条的题干、选项、题型和来源进行离线输入完整性审查；不校验医学/法规事实或标准答案，不联网，不调用模型API，不改原数据。",
+  "method": {
+    "fields_inspected_for_findings": [
+      "question",
+      "option",
+      "question_type",
+      "source"
+    ],
+    "label_fields_not_used": [
+      "answer",
+      "analysis"
+    ],
+    "full_input_records_reviewed": 100,
+    "unicode_note": "查找候选引用时使用NFKC辅助检索；证据和原数据保留原字符，不自动更正OCR。"
+  },
+  "summary": {
+    "raw_count": 100,
+    "question_type_counts": {
+      "最佳选择题": 35,
+      "多项选择题": 8,
+      "配伍选择题": 45,
+      "综合分析选择题": 12
+    },
+    "all_options_empty_count": 3,
+    "additional_missing_visual_count": 5,
+    "additional_missing_or_ambiguous_context_count": 2,
+    "flagged_total_distinct_records": 10,
+    "text_options_main_count": 97,
+    "conservative_sensitivity_count": 90,
+    "main_set_is_not_certified_complete_input": true
+  },
+  "findings": [
+    {
+      "position_1based": 11,
+      "index_0based": 10,
+      "original_question_number_as_transcribed": "108",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "综合分析选择题",
+      "category": "referenced_chemical_structure_absent",
+      "severity": "confirmed_missing_visual_in_local_json",
+      "evidence": [
+        "题干明确包含“舍曲林的化学结构如下”。",
+        "本地条目只有 question、option、question_type、source、answer、analysis 六个字段；题干与选项中未附结构图、图片路径或等价结构表达。"
+      ],
+      "question_text_verbatim": "题干：舍曲林的化学结构如下，体内过程符合线性药动学特征，只有极少量（＜0.2%）以原形从尿中排泄，临床上常⽤剂量为50～200mg，每天给药⼀次。肝肾功能正常的某患者服⽤该药后的达峰时间约为5h，其消除半衰期约为24h，⾎浆蛋⽩结合率为98%。\n108. 舍曲林在体内主要代谢产物仍有活性，约为舍曲林的1/20，该主要代谢产物是（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "问题针对已命名药物的代谢产物，文本可能足以支持基于知识作答，但不能声称包含原题完整输入。",
+      "conservative_recommendation": "不自行画图或从解析补写结构。可保留在预先固定的97条有文本选项主评测中并标记；另报告统一排除全部缺图/缺上下文条目的90条敏感性结果。若恢复原图或等价结构，须记录来源和版本并让所有组使用相同新输入。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 21,
+      "index_0based": 20,
+      "original_question_number_as_transcribed": "14",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "最佳选择题",
+      "category": "all_options_empty",
+      "severity": "confirmed_unusable_letter_selection",
+      "evidence": [
+        "option 的 A、B、C、D、E 五项全部为空字符串。"
+      ],
+      "question_text_verbatim": "14. ⽤烯丙基、环丙基甲基或环丁基甲基对吗啡及其类似物的叔胺部分进⾏修饰后，由阿⽚受体激动剂转为拮抗剂，属于阿⽚受体拮抗剂的是（）。",
+      "nonempty_option_labels": [],
+      "consequence": "即使模型知道药物名称，也不能从本条输入确定它对应哪个答案字母。",
+      "conservative_recommendation": "保留原始条目和排除记录；未从可靠课程原始材料补齐前，不纳入任何方法的答案字母准确率评测。不能用标准答案或解析反推选项。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 26,
+      "index_0based": 25,
+      "original_question_number_as_transcribed": "83",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "配伍选择题",
+      "category": "all_options_empty",
+      "severity": "confirmed_unusable_letter_selection",
+      "evidence": [
+        "option 的 A、B、C、D、E 五项全部为空字符串。"
+      ],
+      "question_text_verbatim": "83. 结构中引⼊甲磺酰基，通过氢键作⽤增⼤了与酶的结合能⼒，使药效增强的药物是（）。",
+      "nonempty_option_labels": [],
+      "consequence": "即使模型知道药物名称，也不能从本条输入确定它对应哪个答案字母。",
+      "conservative_recommendation": "保留原始条目和排除记录；未从可靠课程原始材料补齐前，不纳入任何方法的答案字母准确率评测。不能用标准答案或解析反推选项。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 27,
+      "index_0based": 26,
+      "original_question_number_as_transcribed": "104",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "综合分析选择题",
+      "category": "referenced_chemical_structure_absent",
+      "severity": "confirmed_missing_visual_in_local_json",
+      "evidence": [
+        "题干明确包含“化学结构式如下”。",
+        "本地条目只有 question、option、question_type、source、answer、analysis 六个字段；题干与选项中未附结构图、图片路径或等价结构表达。"
+      ],
+      "question_text_verbatim": "题干：头孢呋⾟钠是⼀种半合成⼴谱抗⽣素，在⽔溶液中易降解，化学结构式如下。其药动学特征可⽤⼀室模型描述，半衰期约为1.1h，给药24h内，90%以上药物以原形从尿中排出。对肝肾功能正常的患者，临床上治疗肺炎时，每⽇三次，每次静脉注射剂量为0.5g。\n104. 头孢呋⾟钠的结构属于（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "问题询问头孢呋辛钠结构类别；药名和文字选项在，但原题所指结构图缺失。",
+      "conservative_recommendation": "不自行画图或从解析补写结构。可保留在预先固定的97条有文本选项主评测中并标记；另报告统一排除全部缺图/缺上下文条目的90条敏感性结果。若恢复原图或等价结构，须记录来源和版本并让所有组使用相同新输入。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 28,
+      "index_0based": 27,
+      "original_question_number_as_transcribed": "105",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "综合分析选择题",
+      "category": "referenced_chemical_structure_absent",
+      "severity": "confirmed_missing_visual_in_local_json",
+      "evidence": [
+        "题干明确包含“化学结构式如下”。",
+        "本地条目只有 question、option、question_type、source、answer、analysis 六个字段；题干与选项中未附结构图、图片路径或等价结构表达。"
+      ],
+      "question_text_verbatim": "题干：头孢呋⾟钠是⼀种半合成⼴谱抗⽣素，在⽔溶液中易降解，化学结构式如下。其药动学特征可⽤⼀室模型描述，半衰期约为1.1h，给药24h内，90%以上药物以原形从尿中排出。对肝肾功能正常的患者，临床上治疗肺炎时，每⽇三次，每次静脉注射剂量为0.5g。\n105. 某患者的表观分布容积为20L，每次静脉注射0.5g，则多次给药后的平均稳态⾎药浓度是（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "问题是药动学计算，相关给药频次、剂量、半衰期、分布容积已有文字；缺图未必影响该小题，但输入仍不完整。",
+      "conservative_recommendation": "不自行画图或从解析补写结构。可保留在预先固定的97条有文本选项主评测中并标记；另报告统一排除全部缺图/缺上下文条目的90条敏感性结果。若恢复原图或等价结构，须记录来源和版本并让所有组使用相同新输入。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 56,
+      "index_0based": 55,
+      "original_question_number_as_transcribed": "7",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "最佳选择题",
+      "category": "referenced_chemical_structure_absent",
+      "severity": "confirmed_missing_visual_in_local_json",
+      "evidence": [
+        "题干明确包含“化学结构如下”。",
+        "本地条目只有 question、option、question_type、source、answer、analysis 六个字段；题干与选项中未附结构图、图片路径或等价结构表达。"
+      ],
+      "question_text_verbatim": "7. 关于环磷酰胺（化学结构如下）结构特点和应⽤的说法，错误的是（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "问题直接涉及环磷酰胺结构特点；药名和文字选项在，所引用结构图缺失。",
+      "conservative_recommendation": "不自行画图或从解析补写结构。可保留在预先固定的97条有文本选项主评测中并标记；另报告统一排除全部缺图/缺上下文条目的90条敏感性结果。若恢复原图或等价结构，须记录来源和版本并让所有组使用相同新输入。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 58,
+      "index_0based": 57,
+      "original_question_number_as_transcribed": "4",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "最佳选择题",
+      "category": "referenced_chemical_structure_absent",
+      "severity": "confirmed_missing_visual_in_local_json",
+      "evidence": [
+        "题干明确包含“化学结构式如下”。",
+        "本地条目只有 question、option、question_type、source、answer、analysis 六个字段；题干与选项中未附结构图、图片路径或等价结构表达。"
+      ],
+      "question_text_verbatim": "4. 抗哮喘药沙丁胺醇的化学结构式如下，其化学⾻架属于（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "问题直接询问沙丁胺醇化学骨架；药名和文字选项在，所引用结构图缺失。",
+      "conservative_recommendation": "不自行画图或从解析补写结构。可保留在预先固定的97条有文本选项主评测中并标记；另报告统一排除全部缺图/缺上下文条目的90条敏感性结果。若恢复原图或等价结构，须记录来源和版本并让所有组使用相同新输入。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 66,
+      "index_0based": 65,
+      "original_question_number_as_transcribed": "81",
+      "source_exam": "2021年执业药师职业资格考试《药学专业知识（⼀）》",
+      "question_type": "配伍选择题",
+      "category": "all_options_empty",
+      "severity": "confirmed_unusable_letter_selection",
+      "evidence": [
+        "option 的 A、B、C、D、E 五项全部为空字符串。"
+      ],
+      "question_text_verbatim": "81. 在体外⽆活性，需要在体内⽔解开环发挥活性的药物是（）。",
+      "nonempty_option_labels": [],
+      "consequence": "即使模型知道药物名称，也不能从本条输入确定它对应哪个答案字母。",
+      "conservative_recommendation": "保留原始条目和排除记录；未从可靠课程原始材料补齐前，不纳入任何方法的答案字母准确率评测。不能用标准答案或解析反推选项。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 67,
+      "index_0based": 66,
+      "original_question_number_as_transcribed": "98",
+      "source_exam": "2021年执业药师职业资格考试《药学综合知识与技能》",
+      "question_type": "综合分析选择题",
+      "category": "referenced_medication_list_absent",
+      "severity": "confirmed_missing_context_in_local_json",
+      "evidence": [
+        "题干在“开具药品如下：”后直接跳到“98. 关于该患者药物治疗方案的说法，错误的是（）。”。",
+        "题干未提供其承诺的开药清单、剂量、频次或表格；选项提及多个药物，但这不等于原始处方材料。"
+      ],
+      "question_text_verbatim": "题干：患者，男，58岁，有⾼⾎压、冠⼼病、⾼脂⾎症、便秘、⾻关节炎和胃溃疡病史，2年前接受冠脉⽀架植⼊术。近⽇，患者先后在⼼内科、消化科、⾻科就诊，开具药品如下：\n98. 关于该患者药物治疗⽅案的说法，错误的是（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "针对患者实际治疗方案的判断缺少被引用的处方材料；不能仅因可以凭知识猜答案，就把输入称为完整。",
+      "conservative_recommendation": "优先从可靠课程原始材料恢复处方清单；本次不补造。若保留在既定97条主评测，明确标注缺上下文，并在90条敏感性集合统一排除此题。",
+      "reference_answer_or_analysis_used_for_finding": false
+    },
+    {
+      "position_1based": 91,
+      "index_0based": 90,
+      "original_question_number_as_transcribed": "103",
+      "source_exam": "2021年执业药师职业资格考试《药学综合知识与技能》",
+      "question_type": "综合分析选择题",
+      "category": "unresolved_previous_selection_reference",
+      "severity": "suspected_missing_shared_or_previous_question_context",
+      "evidence": [
+        "题干仅描述患者咨询如何选用“止痛药”。",
+        "实际小题为“103. 如服用所选止痛药，需关注的不良反应是（）。”；本条没有说明“所选”药物的名称。",
+        "选项列的是不良反应，未给出可唯一解析的药物选择记录；BMI 单位还呈现为 kg/m，可能缺上标。"
+      ],
+      "question_text_verbatim": "题干：患者，男，69岁，BMI 27.8kg/m ，既往有⾻性关节炎病史。近期爬⼭后，再次出现膝关节疼痛，患者热敷后疼痛未缓解，前来咨询如何选⽤“⽌痛药”。\n103. 如服⽤所选⽌痛药，需关注的不良反应是（）。",
+      "nonempty_option_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "consequence": "疑似依赖原题组前一问的选药结果；本地输入不能明确解析“所选止痛药”的指代。仅据当前文本无法确认其原始缺失来源。",
+      "conservative_recommendation": "不从标准解析猜出药名再注入题干。若无法获得完整原题组，保留缺上下文标记，并在90条敏感性集合统一排除。",
+      "reference_answer_or_analysis_used_for_finding": false
+    }
+  ],
+  "evaluation_policy_recommendation": {
+    "status": "建议在查看正式各组结果前固定；不是课程明文规定，也不是已经执行的筛选。",
+    "primary": {
+      "label": "有文本选项集合；含7条已披露的缺图/上下文风险记录",
+      "denominator": 97,
+      "included_positions_1based": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "excluded_positions_1based": [
+        21,
+        26,
+        66
+      ],
+      "question_type_counts": {
+        "最佳选择题": 34,
+        "多项选择题": 8,
+        "配伍选择题": 43,
+        "综合分析选择题": 12
+      }
+    },
+    "sensitivity": {
+      "label": "统一排除全部已识别的缺选项、缺图及上下文风险记录后的敏感性集合",
+      "denominator": 90,
+      "included_positions_1based": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        57,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "excluded_positions_1based": [
+        11,
+        21,
+        26,
+        27,
+        28,
+        56,
+        58,
+        66,
+        67,
+        91
+      ],
+      "question_type_counts": {
+        "最佳选择题": 32,
+        "多项选择题": 8,
+        "配伍选择题": 43,
+        "综合分析选择题": 7
+      }
+    },
+    "constraints": [
+      "所有方法使用同一主集合和同一敏感性集合。",
+      "对同一正式结果文件按固定名单重算90条结果，不因题目答对或答错而改变名单。",
+      "97与90均须明确分母；不要称97条为完整题集，也不要将90条无已识别引用问题等同于所有内容绝对正确。",
+      "主集合内模型格式错误、无效输出、超时或API失败的处理应预先固定并披露；不能为了提高准确率静默从分母删题。",
+      "若取回缺失材料，记录可靠来源和数据哈希，并在所有组中使用一致版本；不能将标准答案或解析转成提示补全。"
+    ]
+  },
+  "non_issue_examples": [
+    {
+      "position_1based": 22,
+      "evidence": "虽写“处方如下”，后文实际附有成分和用量清单，因此不因“如下”二字自动判定缺失。"
+    },
+    {
+      "positions_1based": [
+        10,
+        39,
+        50,
+        51,
+        68,
+        86,
+        88
+      ],
+      "evidence": "综合题共享背景已在本条题干中提供；本次未发现悬空引用。"
+    },
+    {
+      "evidence": "部分药事管理与法规题只有A至D文本、E为空；仅E为空不等于选项缺失，不应统一要求五个非空选项。"
+    }
+  ],
+  "other_transcription_notes": [
+    {
+      "positions_1based": [
+        3,
+        34,
+        78,
+        80
+      ],
+      "evidence": "原题号前缀分别转写为2215、1221248、95520、2118，存在编号拼接疑点；用稳定的列表位置或内部ID定位，未经原始来源验证不要擅自改题号。"
+    },
+    {
+      "positions_1based": [
+        24,
+        62,
+        91
+      ],
+      "evidence": "可见下标/上标位置异常（H受体的1、β受体的2、BMI单位指数）；本次仅记录，不据医学常识自动修复。"
+    }
+  ],
+  "limitations": [
+    "仅审查当前纯文本JSON，未核对原始试卷图片或题组。",
+    "结构图缺失是本地输入事实；是否对特定小题解答必不可少须另行验证。",
+    "除明确悬空引用外，不能保证不存在未显式标记的遗漏、OCR错误或标准标签错误。"
+  ]
+}
