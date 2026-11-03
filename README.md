@@ -14,7 +14,7 @@ This public version omits the numeric student identifier and private host/Colab 
 - Task1_public_repro.ipynb is a generated reproducibility copy with genuine embedded observations. Its code cells are unexecuted; it is not represented as a downloaded live notebook.
 - public_file_manifest.json maps root mirrors to canonical paths and records hashes, privacy adaptations, frozen-source checks, artifact inventories, and scan outcome.
 
-Supplementary files are included where listed in the manifest; inspect run summaries for completion.
+The original experiment and both post-hoc supplementary studies are complete; genuine records are included.
 
 ## Reproduce saved results without an API key
 
@@ -22,6 +22,7 @@ Extract BOTH ZIPs into the same empty directory. From that directory:
 
     python -m pip install -r requirements.txt
     python assignment2_task1/analyze_results.py --run-dir assignment2_task1/actual_run/task1_assignment/formal --data assignment2_task1/actual_run/task1_assignment/formal/source_data.json --output-dir reproduced_analysis
+    python assignment2_task1/analyze_supplemental.py --run-dir assignment2_task1/actual_run/task1_assignment/supplemental --formal-dir assignment2_task1/actual_run/task1_assignment/formal --output-dir reproduced_supplemental_analysis
     python -m unittest discover -s assignment2_task1 -p "test_*.py" -v
     python assignment2_task1/report_en/build_original_sections.py
 
@@ -31,10 +32,24 @@ All 100 records are retained: three have empty options; seven additional risks d
 The report also gives correct/100 scores and valid-output coverage. The formal run made 592 API attempts,
 with six protocol failures, no API request failures, and no explicit retries. Cost estimates are not invoices.
 
+The post-hoc studies made 222 additional attempts:
+
+| Study | Frozen comparison | Observed result |
+| --- | --- | --- |
+| A: closed-world checks | Original CoT / checklist v2 | 13/16 / 16/16; design 5/8 / 8/8, probe 8/8 / 8/8; Holm p=0.5 |
+| B: cached-context single-step control | Original feedback / null feedback | Both 78/95 (78/97 including two shared invalid initials); each wins one paired item; Holm p=1 |
+
+Study A does not show a held-out probe gain; all 32 responses were format-valid.
+Study B is a one-step feedback-availability ablation, not a rerun of the full agent.
+It includes one API failure and two protocol failures; all count as incorrect.
+There are 126,527 known tokens and one request with unknown usage. The CNY 0.365650
+known-usage estimate is neither a complete charge nor an upper bound on total cost.
+
 ## Optional live rerun
 
-Open Task1_public_repro.ipynb in Colab. Keep RUN_LIVE_EXPERIMENTS=False for existing results.
-Only to incur new API charges, change it to True and enter your own DeepSeek key in the hidden prompt.
+Open Task1_public_repro.ipynb in Colab. Keep both RUN_LIVE_EXPERIMENTS=False and
+RUN_SUPPLEMENTAL_LIVE=False to reproduce saved results without a key or network calls.
+Only to incur new API charges, enable the intended flag and enter your own DeepSeek key in the hidden prompt.
 No credential is bundled. Frozen API source bytes are unchanged; changing prompts/settings requires a fresh directory.
 Do not retry valid but wrong answers to improve a score. Post-hoc supplementary studies are separate from the original run.
 
@@ -43,7 +58,9 @@ Do not retry valid but wrong answers to improve a score. Post-hoc supplementary 
 Compile the report source with XeLaTeX twice from its directory. TeX Gyre and Fandol come with full TeX Live.
 Public TeX uses a StudentID placeholder; public packaging helpers read ASSIGNMENT_STUDENT_ID or use a placeholder.
 The private submission PDF keeps its identity and is not automatically published here.
-No final report is claimed while its TeX still contains Pending markers.
+The English submission source is in report_en/; report_zh_updated/ provides a Chinese counterpart.
+The original main-study-only report/ is retained as an earlier version. The completed reports link
+the immutable experiment-code snapshot independently of later presentation-only updates.
 
 The course data/template sources are documented in the report; this repository does not claim ownership of them.
 Medical examples describe model behavior and benchmark labels, not medical guidance.

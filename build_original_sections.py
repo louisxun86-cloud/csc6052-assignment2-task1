@@ -117,13 +117,10 @@ def result_tables(a):
         r"\bottomrule\end{tabular}\end{table}",
         "Costs use the stated peak rates of CNY 2/million input and CNY 8/million output tokens, "
         "treating all input as a cache miss. This conservative estimate is not an invoice; "
-        r"cache discounts and off-peak rates can reduce the charge\citep{deepseekpricing}.",
+        r"cache discounts and off-peak rates can reduce the charge~\citep{deepseekpricing}.",
         r"\begin{figure}[t]\centering",
         r"\includegraphics[width=.68\linewidth]{figures/accuracy_comparison.pdf}",
         r"\caption{Original accuracy and Wilson intervals. The overlapping 97/90 scopes are not independent replications.}\label{fig:accuracy}\end{figure}",
-        r"\begin{figure}[t]\centering",
-        r"\includegraphics[width=.92\linewidth]{figures/efficiency_comparison.pdf}",
-        r"\caption{Original per-item attempts, API time, and tokens. These include all attempts and exclude human waiting time.}\label{fig:cost}\end{figure}",
     ])
     return "\n".join(lines)+"\n"
 

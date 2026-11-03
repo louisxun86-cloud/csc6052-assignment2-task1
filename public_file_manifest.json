@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-11-03T05:44:17.945707+00:00",
+  "built_at_utc": "2026-11-03T05:52:28.730086+00:00",
   "intended_repository": "https://github.com/louisxun86-cloud/csc6052-assignment2-task1",
   "uploaded_by_this_script": false,
   "root_mirror_to_canonical_path": {
@@ -86,8 +86,8 @@
     },
     {
       "file": "prepare_public_release.py",
-      "source_sha256": "4020d4bf584053ebe5d1dc4f195d80e2433ca1d4719bd8dbb4673151710b4f06",
-      "public_sha256": "8de23195ac8a32dcad6bdcfdd3d85caf837ce3d617ebd9bf3f9598b8569f55a3",
+      "source_sha256": "017b6747b6804f0c8d78e6ee32c6ddaee0c76e1ec6ed0b0de052ce4ad5206184",
+      "public_sha256": "3824a9983ab2f515cd82fd8ddd11ae348f2d7a0145ab66184f0739cdaa9def34",
       "reason": "identity/host metadata or portable non-API helper data path"
     },
     {
@@ -116,8 +116,8 @@
     },
     {
       "file": "report_en/main.tex",
-      "source_sha256": "ea91161af60706665b8cd24ddd2ea503276935fcde4040acab9357a6f142ca58",
-      "public_sha256": "0b075ce18dc21921baa35fa3a1b93c97be1d1bee1f41c1de2def0ac655e0bc80",
+      "source_sha256": "676a9277c94b97edf3739e557a96ad0997ee866a64769e8cd97464dcbf959c3c",
+      "public_sha256": "21f7a57b418fea60bb4fac9a963c961562faf49237dc923810173dff1eb67d6f",
       "reason": "identity/host metadata or portable non-API helper data path"
     },
     {
@@ -128,8 +128,8 @@
     },
     {
       "file": "report_zh_updated/main.tex",
-      "source_sha256": "6f19fe86625c1aab847e3657d606f3bf7034285fd2f58bc74dcf38864ab5b616",
-      "public_sha256": "b246586a9511275c5d776772d49fd8060bddcc8059a5a3bc02489053bb35d5d4",
+      "source_sha256": "42f4505a05712a0470a0144d72191d75b8781c581f51d2a9c7c3318c5e99f2cc",
+      "public_sha256": "949ecfd02800fbebb351cbaae07628448ca95f6ba08d3531881f82debf44d10d",
       "reason": "identity/host metadata or portable non-API helper data path"
     },
     {
@@ -156,14 +156,10 @@
       "pending_sections": []
     },
     "report_en": {
-      "pending_sections": [
-        "report_en/generated/repository.tex"
-      ]
+      "pending_sections": []
     },
     "report_zh_updated": {
-      "pending_sections": [
-        "report_zh_updated/generated/repository.tex"
-      ]
+      "pending_sections": []
     }
   },
   "scan": {
@@ -205,8 +201,8 @@
       "bytes": 4651
     },
     "assignment2_task1/prepare_public_release.py": {
-      "sha256": "8de23195ac8a32dcad6bdcfdd3d85caf837ce3d617ebd9bf3f9598b8569f55a3",
-      "bytes": 25956
+      "sha256": "3824a9983ab2f515cd82fd8ddd11ae348f2d7a0145ab66184f0739cdaa9def34",
+      "bytes": 27321
     },
     "assignment2_task1/report/build_prompt_appendix.py": {
       "sha256": "0a1c7d1dea5bb6995dd75f75f3e4395e6e488ce718c9b5c2878e01b9850f70b4",
@@ -217,8 +213,8 @@
       "bytes": 31644
     },
     "assignment2_task1/report_en/build_original_sections.py": {
-      "sha256": "292c78a6257de8ec2d78235bd8b116e1721f47bd97daa58fe8b4ff5079a64644",
-      "bytes": 12361
+      "sha256": "8fb03af6f4a454f166fe5bbcb5f997735969017dbb3d551f633a2411e3cbc26d",
+      "bytes": 12280
     },
     "assignment2_task1/runner.py": {
       "sha256": "4c763ac4808f06d54f4d63b9f1ef367fa4eb2f581541ebc9aa2f708ca80aef2c",
@@ -357,16 +353,16 @@
       "bytes": 3019
     },
     "assignment2_task1/report_en/generated/original_results.tex": {
-      "sha256": "7a73ad1c5f5606318e847af27d37db0d97ed3fb1537b92346d2f0e0b983c9fc2",
-      "bytes": 2093
+      "sha256": "41f45302e23915edaf85e187995b7b2f91d8434aa71e400965616deae12947fd",
+      "bytes": 1843
     },
     "assignment2_task1/report_en/generated/prompts.tex": {
       "sha256": "da737e3e3872b882a8c985b7e40e1092032f57f3735512c85a510a5a10930ef7",
       "bytes": 4164
     },
     "assignment2_task1/report_en/generated/repository.tex": {
-      "sha256": "4eb02f032753b76920185b84c3dfcd3547341745fec2e54bf651a3bf2f778181",
-      "bytes": 430
+      "sha256": "046f20e98b3f0a155368ac792ccf8c4fba2e4442a232efd41171371fc1a0cc10",
+      "bytes": 808
     },
     "assignment2_task1/report_en/generated/supplementary_prompts.tex": {
       "sha256": "de818815e4ce96523e39e9b7d87f5b1e377f401ff5072c01962afad84cb4db80",
@@ -389,8 +385,8 @@
       "bytes": 9134
     },
     "assignment2_task1/report_en/main.tex": {
-      "sha256": "0b075ce18dc21921baa35fa3a1b93c97be1d1bee1f41c1de2def0ac655e0bc80",
-      "bytes": 15861
+      "sha256": "21f7a57b418fea60bb4fac9a963c961562faf49237dc923810173dff1eb67d6f",
+      "bytes": 15865
     },
     "assignment2_task1/report_en/natbib.sty": {
       "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
@@ -417,16 +413,16 @@
       "bytes": 1064
     },
     "assignment2_task1/report_zh_updated/generated/cases.tex": {
-      "sha256": "1962d0c8e89056ed567698e4587b5b15e4b0243f4d666f47c29a14f0f74f6345",
-      "bytes": 3503
+      "sha256": "b2a9a880c0a2a99bec6a0463cd7915c44347925c507c76a46a5522737eb0f5a1",
+      "bytes": 2425
     },
     "assignment2_task1/report_zh_updated/generated/prompts.tex": {
       "sha256": "688575414914065c519f00e23b704e7700de38cc19e618600830e529cac70911",
       "bytes": 4250
     },
     "assignment2_task1/report_zh_updated/generated/repository.tex": {
-      "sha256": "2860affa321a70f600979d4c7eede6395639d20e332d48ee0e1f31406d8d9f6e",
-      "bytes": 275
+      "sha256": "09d2d3e9151d5988a80144073f5998fb44d9ebb9d6d068d466c26a725ce68d82",
+      "bytes": 727
     },
     "assignment2_task1/report_zh_updated/generated/results_analysis.tex": {
       "sha256": "1c89a21f4404bab7c580bde39b3cca673786b29981a317fbd7863df853b3745b",
@@ -437,8 +433,8 @@
       "bytes": 1406
     },
     "assignment2_task1/report_zh_updated/generated/results_table.tex": {
-      "sha256": "ef12cb4996edfef4a1df1a583c919dc4a7b70c3b308cdb7bf285b4b75f2475af",
-      "bytes": 2163
+      "sha256": "c09c554e856770afcebc7f5c6f04f905aa2237495f3f62d3fefd98b3a688c017",
+      "bytes": 1914
     },
     "assignment2_task1/report_zh_updated/generated/run_record.tex": {
       "sha256": "3357f7f4bec292dec679f3717cea954ef8b08852e530cc0d31e903f0c80032be",
@@ -469,7 +465,7 @@
       "bytes": 9134
     },
     "assignment2_task1/report_zh_updated/main.tex": {
-      "sha256": "b246586a9511275c5d776772d49fd8060bddcc8059a5a3bc02489053bb35d5d4",
+      "sha256": "949ecfd02800fbebb351cbaae07628448ca95f6ba08d3531881f82debf44d10d",
       "bytes": 12834
     },
     "assignment2_task1/report_zh_updated/natbib.sty": {
@@ -489,8 +485,8 @@
       "bytes": 61
     },
     "README.md": {
-      "sha256": "0398f96698da13550887b9a5edb99c6ae8ced40433da5689b693c9bd8916f44d",
-      "bytes": 4479
+      "sha256": "ab12c926f2e99446088edaa0dcf435e7d358bd6de179e31ca0220b90ca4f435b",
+      "bytes": 5844
     },
     ".gitignore": {
       "sha256": "06a216a7b39375d3c2a0bb09cbbe70c2d36caaede6fc83e93b54c6575cb62c39",
@@ -697,8 +693,8 @@
       "bytes": 4651
     },
     "prepare_public_release.py": {
-      "sha256": "8de23195ac8a32dcad6bdcfdd3d85caf837ce3d617ebd9bf3f9598b8569f55a3",
-      "bytes": 25956
+      "sha256": "3824a9983ab2f515cd82fd8ddd11ae348f2d7a0145ab66184f0739cdaa9def34",
+      "bytes": 27321
     },
     "build_prompt_appendix.py": {
       "sha256": "0a1c7d1dea5bb6995dd75f75f3e4395e6e488ce718c9b5c2878e01b9850f70b4",
@@ -709,8 +705,8 @@
       "bytes": 31644
     },
     "build_original_sections.py": {
-      "sha256": "292c78a6257de8ec2d78235bd8b116e1721f47bd97daa58fe8b4ff5079a64644",
-      "bytes": 12361
+      "sha256": "8fb03af6f4a454f166fe5bbcb5f997735969017dbb3d551f633a2411e3cbc26d",
+      "bytes": 12280
     },
     "runner.py": {
       "sha256": "4c763ac4808f06d54f4d63b9f1ef367fa4eb2f581541ebc9aa2f708ca80aef2c",
@@ -761,8 +757,8 @@
       "bytes": 28015
     },
     "README.md": {
-      "sha256": "0398f96698da13550887b9a5edb99c6ae8ced40433da5689b693c9bd8916f44d",
-      "bytes": 4479
+      "sha256": "ab12c926f2e99446088edaa0dcf435e7d358bd6de179e31ca0220b90ca4f435b",
+      "bytes": 5844
     },
     "requirements.txt": {
       "sha256": "a8603c4dba1dbc8c347d82b2ab42d7124c7d120d30c29e6f120484dbca0093cd",
@@ -777,8 +773,8 @@
       "bytes": 1449700
     },
     "canonical_source.zip": {
-      "sha256": "ecce640c7e88d6a18e095932601cc7ae8385d89f3896ff71a1761d654d2a4527",
-      "bytes": 1327286
+      "sha256": "246389c7306648be0dd21fe91ae8a7f7dbc860ecdc821bcdf85a916e284f7c4b",
+      "bytes": 1328118
     },
     "scientific_results.zip": {
       "sha256": "892f4cadf737af28d0bc9a880eec7e499d4fe569144bce2e1db662dbf84d2fd0",
